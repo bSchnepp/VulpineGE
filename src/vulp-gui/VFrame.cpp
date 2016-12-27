@@ -15,6 +15,7 @@ VFrame::VFrame(std::string name)
 {
 	this->name = name;
 	this->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	this->contentPane = new VPanel();
 	gtk_window_set_title(GTK_WINDOW(this->window), this->name.c_str());
 }
 

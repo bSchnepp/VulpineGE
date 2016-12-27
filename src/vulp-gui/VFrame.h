@@ -10,6 +10,7 @@
 
 #include <gtk/gtk.h>
 #include <string>
+#include "VPanel.h"
 
 /*
  * Wrapper around GTK+ to make it act more like Swing.
@@ -33,6 +34,7 @@ public:
 private:
 	std::string name;
 	GtkWidget* window;
+	VPanel*	   contentPane;
 };
 
 } /* namespace VulpGui */
