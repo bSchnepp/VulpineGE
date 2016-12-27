@@ -24,4 +24,4 @@ Some ideas and stuff I put together:
     
 Expected hardware to run games with this on, at bare minimum (aka hardware this is built on):
   - Intel i7 920 (yes this ancient thing from just under a decade ago), no overclock or anything special done.
-  - NVIDIA GTX 1050 Ti, (proprietary drivers) (pair an ancient cpu with an ok gpu, why not)
+  - NVIDIA GTX 980, (proprietary drivers) (pair an ancient cpu with a good gpu, why not)
