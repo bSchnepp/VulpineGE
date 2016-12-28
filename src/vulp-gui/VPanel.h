@@ -16,6 +16,14 @@ class VPanel
 public:
 	VPanel();
 	virtual ~VPanel();
+
+	void setPreferredDimensions(int w, int h);
+	int getPreferredWidth(int w);
+	int getPreferredHeight(int h);
+
+private:
+	int preferredWidth;
+	int preferredHeight;
 };
 
 } /* namespace VulpGui */

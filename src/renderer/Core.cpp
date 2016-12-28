@@ -1,22 +1,22 @@
 /*
- * BorderLayout.cpp
+ * Core.cpp
  *
  *  Created on: Dec 27, 2016
  *      Author: brian-dev
  */
 
-#include "BorderLayout.h"
+#include "Core.h"
 
 namespace VulpGui
 {
 
-BorderLayout::BorderLayout()
+Core::Core()
 {
 	// TODO Auto-generated constructor stub
 
 }
 
-BorderLayout::~BorderLayout()
+Core::~Core()
 {
 	// TODO Auto-generated destructor stub
 }

@@ -12,8 +12,8 @@ namespace VulpGui
 
 VPanel::VPanel()
 {
-	// TODO Auto-generated constructor stub
-
+	this->preferredHeight = 600;
+	this->preferredWidth = 800;
 }
 
 VPanel::~VPanel()

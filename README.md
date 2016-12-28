@@ -25,3 +25,12 @@ Some ideas and stuff I put together:
 Expected hardware to run games with this on, at bare minimum (aka hardware this is built on):
   - Intel i7 920 (yes this ancient thing from just under a decade ago), no overclock or anything special done.
   - NVIDIA GTX 980, (proprietary drivers) (pair an ancient cpu with a good gpu, why not)
+
+   NOTICE:
+ 	 This project requires GTK+, which is licensed under the LGPL.
+ 	 Sources for that are here: https://github.com/GNOME/gtk
+ 	 For absolute clarity, I'm using libgtk-3-0: 3.22.5-1 (amd64), obtained from Ubuntu repositories.
+ 	 Since I don't distribute binaries, linking this will be your own problem. (Ideally you want to dynamically link)
+ 	 License for GTK is here: https://github.com/GNOME/gtk/blob/master/COPYING
+ 	 Do note that GTK is __only__ used for tools, NOT for the actual game-world stuff itself. (That is done via SDL)
+ 	 LGPL looks scary, please tell me if I'm doing something wrong.

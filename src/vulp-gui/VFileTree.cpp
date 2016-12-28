@@ -1,22 +1,22 @@
 /*
- * LayoutManager.cpp
+ * VFileTree.cpp
  *
  *  Created on: Dec 27, 2016
  *      Author: brian-dev
  */
 
-#include "LayoutManager.h"
+#include "VFileTree.h"
 
 namespace VulpGui
 {
 
-LayoutManager::LayoutManager()
+VFileTree::VFileTree()
 {
 	// TODO Auto-generated constructor stub
 
 }
 
-LayoutManager::~LayoutManager()
+VFileTree::~VFileTree()
 {
 	// TODO Auto-generated destructor stub
 }
