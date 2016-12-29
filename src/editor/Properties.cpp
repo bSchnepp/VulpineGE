@@ -6,21 +6,19 @@
  */
 
 #include "Properties.h"
-#include "../vulp-gui/VFrame.h"
+
 
 namespace VulpEditor
 {
 
 Properties::Properties()
 {
-	this->frame = new VulpGui::VFrame("Vulpine Properties");
-	this->frame->setSize(250, 540);
-	this->frame->setVisible(true);
+	this->getFrame()->setTitle("Vulpine Properties");
+	this->getFrame()->setSize(250, 540);
 }
 
 Properties::~Properties()
 {
-	delete this->frame;
 }
 
 } /* namespace VulpGui */

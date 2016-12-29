@@ -5,19 +5,19 @@
  *      Author: brian-dev
  */
 
-#ifndef EDITOR_EXPLORER_H_
-#define EDITOR_EXPLORER_H_
+#ifndef EDITOR_TOOLBOX_H_
+#define EDITOR_TOOLBOX_H_
 
 #include "EditorCore.h"
 
 namespace VulpEditor
 {
 
-class Explorer : public EditorCore
+class Toolbox : public EditorCore
 {
 public:
-	Explorer();
-	virtual ~Explorer();
+	Toolbox();
+	virtual ~Toolbox();
 };
 
 } /* namespace VulpGui */

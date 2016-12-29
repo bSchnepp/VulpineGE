@@ -6,21 +6,18 @@
  */
 
 #include "Explorer.h"
-#include "../vulp-gui/VFrame.h"
 
 namespace VulpEditor
 {
 
 Explorer::Explorer()
 {
-	this->frame = new VulpGui::VFrame("Vulpine Explorer");
-	this->frame->setSize(250, 540);
-	this->frame->setVisible(true);
+	this->getFrame()->setTitle("Vulpine Editor");	//Refactoring is fun! Finish this later.
+	this->getFrame()->setSize(250, 540);
 }
 
 Explorer::~Explorer()
 {
-	delete this->frame;
 }
 
 } /* namespace VulpGui */
