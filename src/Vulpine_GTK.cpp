@@ -16,25 +16,31 @@
  */
 
 #include <gtk/gtk.h>
-#include <iostream>
-#include <vector>
+#include <SDL2/SDL.h>
+
 #include "editor/Explorer.h"
 #include "editor/Properties.h"
 #include "editor/Toolbox.h"
-#include "util/Hash.h"
 
-int main(int argc, char *argv[])
+#include "renderer/Core.h"
+
+int main(int argc, char* argv[])
 {
 	gtk_init(&argc, &argv);
 	VulpEditor::Explorer* explorer = new VulpEditor::Explorer();
 	VulpEditor::Properties* properties = new VulpEditor::Properties();
 	VulpEditor::Toolbox* toolbox = new VulpEditor::Toolbox();
+	SDL_Init(SDL_INIT_VIDEO);
+
+	VulpRndr::Core* core = new VulpRndr::Core();
 
 	gtk_main();	// Main loop -- pass signals to it somehow dynamically Maybe we just need pointers to functions and pre-compile everything here???
+	//Every subsystem should run on it's own thread, and the file streaming service should *never* be interrupted.
 	delete explorer;
 	delete properties;
 	delete toolbox;
-
+	delete core;
+    SDL_Quit();
 	//I'll probably switch to using gtkmm whenever I can configure it to work in Eclipse here.
 	//Thus the need for abstraction... and maybe for easier porting to this thing called "Windows", whatever that is. :) GCC does all the work anyway, not fixing for VS or doing a cmake.
 	return 0;
