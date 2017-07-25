@@ -1,38 +1,46 @@
 # VulpineGE
-Game engine sort of like Unity or Unreal, built and designed specifically for Linux (while being *technically* cross-platform), aiming to support any which way combination of desktop environments and managers and whatever, and to fully take advantage of Vulkan. Be a bit clever with it too.
 
+[reviving this project shortly]
 
-Formats are intentionally unique to this engine, because coming up with things on the spot is fun.
+Brand new game engine specifically built for Linux gaming.
+It's main design goals are simple:
 
-Some ideas and stuff I put together:
-  game.elf (placeholder name, can really be anything) loads a file called 'data.fox' (or whatever else format + extension name I come up with and design in 25 minutes), which is the archive for (almost) everything in the game. game.elf is compiled for each specific project, and is the core of the engine itself + whatever developers add in. This means that if you use no extensions or anything to the engine, you can replace 'data.fox' and the game will run and execute that game without any problems, theoretically (assuming the game doesn't expect to have to do anything to the data there). Other stray files would be things like 'audio.fxa' or 'localization.fxl' or something.
-  
-  Scripting language either actually be Lua, or a new language like Lua (ideally fully object-oriented, and not with messes of tables all over the place.) Probably just Lua. Either way, the virtual machine the engine uses to actually use the language will be hand-written and not just the official one. (Because VM development is fun too!)
-  
-  Hybrid raycast/rasterizer, using raycast for things like shading and reflections. Implement in SPIR-V through Vulkan.
-  (Is this feasible to do quickly???)
-  
-  This isn't very serious of a project, and I don't really expect this to go anywhere, so this will probably never be finished or even usable.
+	- Support Linux natively, with Linux in mind.
+	- Support Vulkan.
+	- Support a new model format that can speak Eevee/Cycles' shader stuff. What it looks like in Eevee should be roughly what it looks like in Vulpine.
+	- Do lighting really well. Try to do whatever we can to make a low poly model look high poly.
+	
+Some considerations I'll have to make:
 
-  TODO list:
-    - Custom 3D modelling toolkit and animation set (we can't just use Blender unfortunately ):, want to keep everything consistant with rights + whatever.)
-    - Custom image manipulation kit, (again can't just use GIMP)
-    - Custom audio suite
-    - Custom rendering engine (Don't want to use OGRE, takes all the fun out ): )
-    - Custom abstraction toolkit... might actually just use SDL + GTK.
-    - Everything!
-    
-    
-My hardware I'm using to test this on:
-  - Intel i7 920 (yes this ancient thing from just under a decade ago), no overclock or anything special done.
-  - NVIDIA GTX 980, (proprietary drivers)
-  - Ubuntu 17.04 (Unity 7, NOT Unity 8) and Debian 8
+	- Full native GlassPanesOS port? (Would prefer not to because branching and all, possibly take the easy way out by linking against Cygwin.)
+	- Rename engine to 'FreedomGE' for consistency purposes.
+	- Embed LuaJIT into the engine for scripting.
+	- Do hybrid raycast/rasterizing?
+	- Create our own extensions and plugins for Blender and all.
+	- Create texture painting software, cloth stuff, etc. etc.
+	- Try to be a serious alternative to the big AAA engines?
+	
+___
 
-   NOTICE:
- 	 This project requires GTK+, which is licensed under the LGPL.
- 	 Sources for that are here: https://github.com/GNOME/gtk
- 	 For absolute clarity, I'm using libgtk-3-0: 3.22.5-1 (amd64), obtained from Ubuntu repositories.
- 	 Since I don't distribute binaries, linking this will be your own problem. (Ideally you want to dynamically link)
- 	 License for GTK is here: https://github.com/GNOME/gtk/blob/master/COPYING
- 	 Do note that GTK is __only__ used for tools, NOT for the actual game-world stuff itself. (That is done via SDL)
- 	 LGPL looks scary, please tell me if I'm doing something wrong.
+Testing hardware:
+
+	- i7 920 CPU (Overclocked to 4.0Ghz)
+	- GTX 980 (proprietary drivers)
+	- Debian 9 ("Stretch") (I dual boot this with Arch but don't use proprietary drivers on that)
+	- 8GB of DDR3 RAM
+	
+	- R7 1700X (Overclocked to 4.0Ghz)
+	- R9 290X
+	- Pop!_OS Alpha
+	- 32GB of DDR4 RAM
+	
+	- i7 3700K (Overclocked to 4.4Ghz)
+	- R9 290X
+	- Fedora 25
+	- 32GB of DDR3 RAM
+
+___
+
+This project currently requires GTK+, which will be removed as a dependency later.
+You'll need to dynamically link against it with -ldl and load the module and all that.
+For now, I only distribute source code.
